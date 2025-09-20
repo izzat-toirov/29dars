@@ -25,5 +25,13 @@ export const usePhone = ()=>{
         },
       });
 
-    return {getPhone, createPhone, deletePhone}
+      const uptadePhone = useMutation<any, any, any>({
+        mutationFn: ({id, body}) =>
+          api.put(`Phone/${id}`, body).then((res) => res.data),
+        onSuccess: () => {
+            client.invalidateQueries({queryKey: ["phoneKey"]})
+        },
+      });
+
+    return {getPhone, createPhone, deletePhone, uptadePhone}
 }

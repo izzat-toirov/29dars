@@ -1,7 +1,8 @@
 export type FieldType = {
-    title?: string;
-    price?: string;
-    image?: string;
-    memories?: string[];
-    isDelivery: boolean;
-  };
+  id?: string | number;  
+  title?: string;
+  price?: string;
+  image?: string;
+  memories?: string[];
+  isDelivery: boolean;
+};
